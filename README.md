@@ -86,7 +86,7 @@ After downloading, place under the checkpoints directory.
 We do the inference with beam search method since when we use top_k method, unexpected differences happen, so it can lead to very low quality.
 
 ```
-python evaluate_m2t_transformer.py --name M2T_EL4_DL4_NH8_PS --gpu_id 2 --num_results 20 --n_enc_layers 4 --n_dec_layers 4 --proj_share_weight --ext beam_search
+python evaluate_m2t_transformer.py --name M2T_EL3_DL3_NH8_PS --gpu_id 2 --num_results 20 --n_enc_layers 3 --n_dec_layers 3 --proj_share_weight --ext beam_search
 ```
 
 
