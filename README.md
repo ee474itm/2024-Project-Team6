@@ -1,6 +1,10 @@
 # 2024-Project-Team6
 
+## About Instruct-pix2pix
 
+conda env create -f environment.yaml
+conda activate ip2p
+bash scripts/download_checkpoints.sh
 
 ## About PIA
 
