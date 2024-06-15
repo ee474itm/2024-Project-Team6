@@ -2,9 +2,19 @@
 
 ## About Instruct-pix2pix
 
-conda env create -f environment.yaml
-conda activate ip2p
+### Set up a conda environment, and download a pretrained model:
+```
+conda env create -f environment.yaml -p /conda-env/ip2p
+conda activate conda-env/ip2p
 bash scripts/download_checkpoints.sh
+```
+### Tips for changing image
+1. If image changes too much
+    Increasing the image CFG weight
+    Decreasing the text CFG weight   
+2. If image doesn't change a lot
+    Decreasing the image CFG weight
+    Increasing the text CFG weight
 
 ## About TM2T
 
