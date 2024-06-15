@@ -4,8 +4,8 @@
 
 ### Set up a conda environment, and download a pretrained model:
 ```
-conda env create -f environment.yaml -p /conda-env/ip2p
-conda activate conda-env/ip2p
+conda env create -f environment.yaml 
+conda activate ip2p
 bash scripts/download_checkpoints.sh
 ```
 ### Tips for changing image
