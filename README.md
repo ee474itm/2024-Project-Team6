@@ -4,7 +4,7 @@
 
 ## About PIA
 
-Before Inference, Please download PIA model's ckpt and StableDiffusion model. It is necessary to inference our model.
+Before Inference, please download PIA model's ckpt and StableDiffusion model. It is necessary to inference our model.
 Use the following commands.
 
 ### Download checkpoints
