@@ -9,6 +9,7 @@ from omegaconf import OmegaConf
 from animatediff.pipelines import I2VPipeline
 from animatediff.utils.util import preprocess_img, save_videos_grid
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '2'
 
 def seed_everything(seed):
     import random
@@ -17,6 +18,7 @@ def seed_everything(seed):
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed % (2**32))
     random.seed(seed)
+
 
 
 if __name__ == "__main__":
@@ -36,7 +38,7 @@ if __name__ == "__main__":
 
     if args.magnitude is not None:
         config.validation_data.mask_sim_range = [args.magnitude]
-
+        
     if args.style_transfer:
         config.validation_data.mask_sim_range = [
             -1 * magnitude - 1 if magnitude >= 0 else magnitude for magnitude in config.validation_data.mask_sim_range
@@ -81,9 +83,11 @@ if __name__ == "__main__":
     print(f"using DreamBooth: {dreambooth_path}")
     print(f"using Lora      : {lora_path}")
 
+    config.validation_data.mask_sim_range = [1]
+    
     sim_ranges = config.validation_data.mask_sim_range
-    if isinstance(sim_ranges, int):
-        sim_ranges = [sim_ranges]
+    #if isinstance(sim_ranges, int):
+    #    sim_ranges = [sim_ranges]
 
     OmegaConf.save(config, os.path.join(target_dir, "config.yaml"))
     generator.manual_seed(config.generate.global_seed)
