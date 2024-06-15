@@ -1,4 +1,5 @@
 import os
+import glob
 
 from os.path import join as pjoin
 
@@ -14,6 +15,16 @@ from data.dataset import Motion2TextEvalDataset
 from scripts.motion_process import *
 from torch.utils.data import DataLoader
 from utils.word_vectorizer import WordVectorizerV2
+
+def readfile(directory, text_files):
+    f = open('%s/%s' % (directory, text_files), 'r')
+    caption_list = []
+    lines = f.readlines()
+    for line in lines:
+        caption_list.append(line)
+    f.close()
+
+    return caption_list
 
 
 def plot_t2m(data, caption, save_dir):
@@ -97,6 +108,7 @@ if __name__ == '__main__':
         opt.motion_dir = pjoin(opt.data_root, 'new_joint_vecs')
         opt.m_token_dir = pjoin(opt.data_root, 'VQVAEV3_CB1024_CMT_H1024_NRES3')
         opt.text_dir = pjoin(opt.data_root, 'texts')
+        print(opt.text_dir)
         opt.joints_num = 21
         radius = 240 * 8
         fps = 12.5
@@ -126,7 +138,28 @@ if __name__ == '__main__':
 
     m2t_transformer = build_models(opt)
 
+    directory = './motion_option'
+    files_in_directory = os.listdir(directory)
+    
+    text_files = [file for file in files_in_directory if file.endswith(".txt")]
+    caption_option_list = readfile(directory, text_files[0])
+        
+    
     split_file = pjoin(opt.data_root, opt.split_file)
+    with open(split_file, "w") as file:
+        # Optionally, write a message indicating the file has been cleared before getting input motion
+        file.write("")
+        
+        
+    if caption_option_list[1] == 'walk':
+        with open(split_file, 'w+') as file:
+            file.write('M00545' + '\n')
+    elif caption_option_list[1] == 'waving hands':
+        with open(split_file, 'w+') as file:
+            file.write('M01399' + '\n')
+    elif caption_option_list[1] == 'playing guitar':
+        with open(split_file, 'w+') as file:
+            file.write('M01444' + '\n')
 
     dataset = Motion2TextEvalDataset(opt, mean, std, split_file, w_vectorizer)
     data_loader = DataLoader(dataset, batch_size=opt.batch_size,num_workers=1, shuffle=True, pin_memory=True)
@@ -150,9 +183,10 @@ if __name__ == '__main__':
     '''Generating Results'''
     print('Generating Results')
     result_dict = {}
+    caption_list = []
     with torch.no_grad():
         for i, batch_data in enumerate(data_loader):
-            print('%02d_%03d'%(i, opt.num_results))
+            print('%02d'%(i))
             _, _, captions, sent_lens, motions, m_tokens, m_lens, _ = batch_data
             # word_emb = word_emb.detach().to(opt.device).float()
             m_tokens = m_tokens.detach().to(opt.device).long()
@@ -182,8 +216,15 @@ if __name__ == '__main__':
                 # print(pred_tokens)
                 # vq_latent = quantizer.get_codebook_entry(pred_tokens)
                 # gen_motion = vq_decoder(vq_latent)
-                pred_caption = ' '.join(w_vectorizer.itos(i) for i in pred_tokens)
-                print(pred_caption)
+                pred_caption = [w_vectorizer.itos(i) for i in pred_tokens]
+                index = pred_caption.index('person')
+                pred_caption = pred_caption[index+1:]
+                pred_caption = [caption_option_list[0].strip()] + pred_caption
+                #pred_caption = ' '.join(w_vectorizer.itos(i) for i in pred_tokens)
+                #pred_caption = pred_caption.replace('unk ', '')
+                
+                caption_list.append(' '.join(pred_caption))
+                print(' '.join(pred_caption))
                 sub_dict = {}
                 # sub_dict['pred_caption'] = pred_caption
                 # sub_dict['length'] = len(gen_motion[0])
@@ -193,24 +234,37 @@ if __name__ == '__main__':
             if i > opt.num_results:
                 break
 
+    file_name = '../TEAM6/Temp/motion_caption.txt'
+    with open(file_name, 'w+') as file:
+        file.write('\n'.join(caption_list))
+        
 
 
-    print('Animating Results')
+    # Use glob to get a list of all files in the directory
+    files = glob.glob(os.path.join(directory, "*"))
+
+    # Iterate over the list of files and remove each one
+    for file in files:
+        if os.path.isfile(file):
+            os.remove(file)
+
+
+    #print('Animating Results')
     '''Animating Results'''
-    for i, (key, item) in enumerate(result_dict.items()):
-        print('%02d_%03d'%(i, opt.num_results))
-        captions = item['caption']
-        gt_motions = item['gt_motion']
-        joint_save_path = pjoin(opt.joint_dir, key)
-        animation_save_path = pjoin(opt.animation_dir, key)
+    #for i, (key, item) in enumerate(result_dict.items()):
+        #print('%02d_%03d'%(i, opt.num_results))
+        #captions = item['caption']
+        #gt_motions = item['gt_motion']
+        #joint_save_path = pjoin(opt.joint_dir, key)
+        #animation_save_path = pjoin(opt.animation_dir, key)
 
-        os.makedirs(joint_save_path, exist_ok=True)
-        os.makedirs(animation_save_path, exist_ok=True)
+        #os.makedirs(joint_save_path, exist_ok=True)
+        #os.makedirs(animation_save_path, exist_ok=True)
 
         # np.save(pjoin(joint_save_path, 'gt_motions.npy'), gt_motions)
-        plot_t2m(gt_motions, captions[0], pjoin(animation_save_path, 'gt_motion'))
-        for t in range(opt.repeat_times):
-            pred_caption = item['result_%02d'%t]
+        #plot_t2m(gt_motions, captions[0], pjoin(animation_save_path, 'gt_motion'))
+        #for t in range(opt.repeat_times):
+            #pred_caption = item['result_%02d'%t]
             # motion = sub_dict['motion']
             # np.save(pjoin(joint_save_path, 'gen_motion_%02d_L%03d.npy' % (t, motion.shape[1])), motion)
-            plot_t2m(gt_motions, pred_caption, pjoin(animation_save_path, 'gen_motion_%02d_L%03d' % (t, gt_motions.shape[1])))
+            #plot_t2m(gt_motions, pred_caption, pjoin(animation_save_path, 'gen_motion_%02d_L%03d' % (t, gt_motions.shape[1])))
