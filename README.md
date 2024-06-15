@@ -6,6 +6,7 @@ Use the following commands.
 
 # About PIA
 ## Setup
+You should download these checkpoints to inference our model.
 
 ### Download checkpoints
 <li>Download the Stable Diffusion v1-5</li>
