@@ -1,12 +1,11 @@
 # 2024-Project-Team6
 
+
+
+## About PIA
+
 Before Inference, Please download PIA model's ckpt and StableDiffusion model. It is necessary to inference our model.
 Use the following commands.
-
-
-# About PIA
-## Setup
-You should download these checkpoints to inference our model.
 
 ### Download checkpoints
 <li>Download the Stable Diffusion v1-5</li>
