@@ -45,3 +45,21 @@ Put checkpoints as follows:
         ├── unet
         └── ...
 ```
+
+# Inference
+First, put the input image to the directory TEAM6/Input.
+
+Second, run the following code:
+```
+python main_total.py
+```
+## User-Inputs
+There are some user-inputs in our code.
+
+<li>cfg values: </li>
+<li>Edit condition: </li>
+<li>Object feature: You should express the objects of your input image such as 1 girl, 2 person, 1 boy, etc.</li>
+<li>Choose whether to create a motion emoticon or an emotion emoticon: If you want to create motion emoticon, press Y or y. If not, press N or n.</li>
+<li>Motion: Press between 1(walk), 2(waving hands), 3(playing guitar). </li>
+<li>Emotion: Enter the desired emotion you want to generate.</li>
+<li>Change video length: You can modify the video length by modulate the number of video frames. Default video frame number is 16. If you want, press N or n and enter the number of frames. We recommend to enter between 10 and 22.</li>
