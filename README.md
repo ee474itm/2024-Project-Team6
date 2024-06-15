@@ -45,14 +45,14 @@ Put checkpoints as follows:
         └── ...
 ```
 
-# Inference
+## Inference
 First, put the input image to the directory TEAM6/Input.
 
 Second, run the following code:
 ```
 python main_total.py
 ```
-## User-Inputs
+### User-Inputs
 There are some user-inputs in our code.
 
 <li>cfg values: </li>
