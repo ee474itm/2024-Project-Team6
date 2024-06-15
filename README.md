@@ -3,6 +3,9 @@
 Before Inference, Please download PIA model's ckpt and StableDiffusion model. It is necessary to inference our model.
 Use the following commands.
 
+
+# PIA：Personalized Image Animator
+
 conda install git-lfs
 git lfs install
 git clone https://huggingface.co/runwayml/stable-diffusion-v1-5 models/StableDiffusion/
