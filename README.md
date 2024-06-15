@@ -11,13 +11,13 @@ bash scripts/download_checkpoints.sh
 ### Tips for changing image
 1. If image changes too much
 
-    <li>Increasing the image CFG weight</li>
-    <li>Decreasing the text CFG weight</li>
+    Increasing the image CFG weight
+    Decreasing the text CFG weight
    
 2. If image doesn't change a lot
    
-    <li>Decreasing the image CFG weight</li>
-    <li>Increasing the text CFG weight</li>
+    Decreasing the image CFG weight
+    Increasing the text CFG weight
 
 ## About TM2T
 
