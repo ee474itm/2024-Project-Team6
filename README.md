@@ -4,7 +4,9 @@
 
 ### System Requirements: 
 
-### How to Use Model:
+### Model Guide:
+
+### Results:
 
 
 ## About Instruct-pix2pix
