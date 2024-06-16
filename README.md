@@ -8,19 +8,19 @@ Double-Nested U-Structure
 
 ### System Requirements: 
 The following requirements need to be installed in order to utilize this model.
-'''
+`````
 Python
 Torch2.3
-'''
+`````
 
 ### Model Guide:
 Input jpg images into U2NET/test_data/test_images file.
 Run the following commands.
-'''
+`````
 python u2net_test.py
 
 python applyMask_Removal.py
-```
+`````
 The first command produces masks, which are saved in the U2NET/test_data/u2net_results file.
 The subsequent command applies the mask(s) onto the original image and saves the results in the U2NET/test_data/finalResults file.
 
