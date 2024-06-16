@@ -26,7 +26,7 @@ The subsequent command applies the mask(s) onto the original image and saves the
 
 ### Results:
 The following are some of the results from the U2Net model.
-
+![1](https://github.com/ee474itm/2024-Project-Team6/assets/162101368/d4339ba0-98d7-4963-9151-29eae3509c0f)
 
 ## About Instruct-pix2pix
 
