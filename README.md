@@ -134,10 +134,29 @@ After downloading, place under the checkpoints directory.
 
 ## About PIA
 
+### Prepare Environment
+
+Use the following command to install Pytorch==2.0.0 and other dependencies:
+
+```
+conda env create -f environment-pt2.yaml
+conda activate pia
+```
+
+If you want to use lower version of Pytorch (e.g. 1.13.1), you can use the following command:
+
+```
+conda env create -f environment.yaml
+conda activate pia
+```
+
+We strongly recommend you to use Pytorch==2.0.0 which supports `scaled_dot_product_attention` for memory-efficient image animation.
+
+### Download checkpoints
+
 Before Inference, please download PIA model's ckpt and StableDiffusion model. It is necessary to inference our model.
 Use the following commands.
 
-### Download checkpoints
 <li>Download the Stable Diffusion v1-5</li>
 
 ```
@@ -185,8 +204,8 @@ python main_total.py
 ### User-Inputs
 There are some user-inputs in our code.
 
-<li>cfg values: </li>
-<li>Edit condition: </li>
+<li>cfg values: If image changes too much, increase the image CFG weight or decrease the text CFG weight.</li>
+<li>Edit condition: Please describe how to change the input image such as 'He is on the street', 'He is in the park and sitting on the bench.', etc.</li>
 <li>Object feature: You should express the objects of your input image such as 1 girl, 2 person, 1 boy, etc.</li>
 <li>Choose whether to create a motion emoticon or an emotion emoticon: If you want to create motion emoticon, press Y or y. If not, press N or n.</li>
 <li>Motion: Press between 1(walk), 2(waving hands), 3(playing guitar). </li>
