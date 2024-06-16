@@ -28,6 +28,7 @@ The subsequent command applies the mask(s) onto the original image and saves the
 ### Results:
 The following are some of the results from the U2Net model.
 
+![image](https://github.com/ee474itm/2024-Project-Team6/assets/162101368/c1f2df0c-770d-4bbd-8bee-27e848b67810)
 
 
 
