@@ -3,8 +3,9 @@
 ## About U2NET
 
 ### Model:
-Image segmentation model for detecting salient objects.
-Double-Nested U-Structure
+The U2Net is an image segmentation model for detecting salient objects.
+This model utilizes a double-nested U-structure to produce masks for images.
+These masks can be utilized to remove backgrounds from images.
 
 ### System Requirements: 
 The following requirements need to be installed in order to utilize this model.
