@@ -7,8 +7,11 @@ Image segmentation model for detecting salient objects.
 Double-Nested U-Structure
 
 ### System Requirements: 
+The following requirements need to be installed in order to utilize this model.
+'''
 Python
 Torch2.3
+'''
 
 ### Model Guide:
 Input jpg images into U2NET/test_data/test_images file.
@@ -23,6 +26,7 @@ The subsequent command applies the mask(s) onto the original image and saves the
 
 ### Results:
 The following are some of the results from the U2Net model.
+
 
 ## About Instruct-pix2pix
 
