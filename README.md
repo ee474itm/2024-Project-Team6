@@ -28,7 +28,7 @@ The subsequent command applies the mask(s) onto the original image and saves the
 ### Results:
 The following are some of the results from the U2Net model.
 
-
+![Alt text](relative%20U2Net/U2Net_Examples.png?raw=true "Background Removal")
 
 
 
