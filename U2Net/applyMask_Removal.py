@@ -28,12 +28,6 @@ def apply_mask(image_path, mask_path, result_dir):
     for i in range(image.shape[0]):
         for j in range(image.shape[1]):
             for k in range(image.shape[2]):
-                #if mask[i][j]>=0.8:
-                #    result[i][j][k] = image[i][j][k]
-                #else:
-                #    result[i][j][k] = 255.0
-                
-                
                 cnt=0
                 for p in range(-1,2):
                     for q in range(-1,2):
@@ -51,7 +45,6 @@ def apply_mask(image_path, mask_path, result_dir):
     print(result_dir)
 
     # Save the result as JPEG in the result directory
-    #result_image.save(os.path.join(result_dir, os.path.basename(image_path)))
     result_image.save(os.path.join(result_dir, 'input.jpg'))
 
 if __name__ == "__main__":
