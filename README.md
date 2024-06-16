@@ -3,6 +3,7 @@
 ## About U2NET
 
 ### Model:
+Image segmentation model for detecting salient objects.
 Double-Nested U-Structure
 
 ### System Requirements: 
@@ -14,13 +15,14 @@ Input jpg images into U2NET/test_data/test_images file.
 Run the following commands.
 ```
 python u2net_test.py
+
 python applyMask_Removal.py
 ```
 The first command produces masks, which are saved in the U2NET/test_data/u2net_results file.
 The subsequent command applies the mask(s) onto the original image and saves the results in the U2NET/test_data/finalResults file.
 
 ### Results:
-
+The following are some of the results from the U2Net model.
 
 ## About Instruct-pix2pix
 
