@@ -29,7 +29,6 @@ The subsequent command applies the mask(s) onto the original image and saves the
 The following are some of the results from the U2Net model.
 
 
-![Uploading EE474_table.png…]()
 
 
 
