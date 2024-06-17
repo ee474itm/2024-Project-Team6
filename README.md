@@ -87,7 +87,7 @@ Before Inference, please download TM2T model's pre-trianed model and dataset. It
 Use the following commands.
 
 In this model, we can use HumanML3D or KIT-ML dataset. However, in this project, KIT-ML dataset is used.
-You can go to this link [Dataset Link] (https://drive.google.com/drive/folders/1MnixfyGfujSP-4t8w_2QvjtTVpEKr97t) for KIT-ML dataset.
+You can go to this link [Dataset Link] ([https://drive.google.com/drive/folders/1MnixfyGfujSP-4t8w_2QvjtTVpEKr97t](https://drive.google.com/drive/folders/1joBP3SoCEV9x8l5A6rzSiAhiBrlHtOnM?usp=sharing) for KIT-ML dataset.
 
 If you want to use HumanML3D dataset, go to this link [HumanML3D Link] (https://github.com/EricGuo5513/HumanML3D?tab=readme-ov-file).
 
@@ -117,7 +117,7 @@ Create a checkpoint folder to place pre-traine models:
 mkdir ./checkpoints
 ```
 
-You can go to this link and download [Pre-trained Model] (https://drive.google.com/file/d/1xEoMy1aBRe0fxYeSzeLwzjHr9Ia6d6Gf/view).
+You can go to this link and download [Pre-trained Model] ([https://drive.google.com/file/d/1xEoMy1aBRe0fxYeSzeLwzjHr9Ia6d6Gf/view](https://drive.google.com/drive/folders/1joBP3SoCEV9x8l5A6rzSiAhiBrlHtOnM?usp=sharing).
 
 ```
 ./checkpoints/t2m/
