@@ -201,7 +201,7 @@ Second, run the following code:
 ```
 python main_total.py
 ```
-After entering the following user-inputs, the result output will be in the directory TEAM6/Output.
+After entering the following user-inputs, the result output will be in the directory TEAM6/Result.
 
 If you want to see the intermediate results, check the directory TEAM6/Temp.
 
