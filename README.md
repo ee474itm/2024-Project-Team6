@@ -43,7 +43,7 @@ conda activate ../../conda-env/ip2p
 bash scripts/download_checkpoints.sh
 ```
 
-You can go to this link and download Pre-trained Model. ([https://drive.google.com/file/d/1B54UJdcYQv1XwMcyt13JrN3r_V-GYM4_/view?usp=sharing])
+You can also go to this link and download Pre-trained Model. ([https://drive.google.com/file/d/1B54UJdcYQv1XwMcyt13JrN3r_V-GYM4_/view?usp=sharing])
 
 ### Tips for changing image
 1. If image changes too much
