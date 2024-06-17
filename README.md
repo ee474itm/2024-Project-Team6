@@ -201,6 +201,10 @@ Second, run the following code:
 ```
 python main_total.py
 ```
+After entering the following user-inputs, the result output will be in the directory TEAM6/Output.
+
+If you want to see the intermediate results, check the directory TEAM6/Temp.
+
 ### User-Inputs
 There are some user-inputs in our code.
 
@@ -211,3 +215,5 @@ There are some user-inputs in our code.
 <li>Motion: Press between 1(walk), 2(waving hands), 3(playing guitar). </li>
 <li>Emotion: Enter the desired emotion you want to generate.</li>
 <li>Change video length: You can modify the video length by modulate the number of video frames. Default video frame number is 16. If you want, press N or n and enter the number of frames. We recommend to enter between 10 and 22.</li>
+
+
