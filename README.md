@@ -180,10 +180,6 @@ git clone https://huggingface.co/Leoxing/PIA models/PIA/
 bash download_bashscripts/2-RcnzCartoon.sh
 ```
 
-
-You can also download *pia.ckpt* manually through link on [Google Drive](https://drive.google.com/file/d/1RL3Fp0Q6pMD8PbGPULYUnvjqyRQXGHwN/view?usp=drive_link)
-or [HuggingFace](https://huggingface.co/Leoxing/PIA).
-
 Put checkpoints as follows:
 ```
 └── models
@@ -196,6 +192,8 @@ Put checkpoints as follows:
         ├── unet
         └── ...
 ```
+
+You can also go to this link and download Pre-trained Model. ([https://drive.google.com/drive/folders/1QlDe6cst6xK1RMLVqZeExB-GTsHrk41d])
 
 ## Inference
 First, put the input image to the directory TEAM6/Input.
