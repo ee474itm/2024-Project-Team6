@@ -2,12 +2,12 @@
 
 ## About U2NET
 
-### Model:
+### Model
 The U2Net is an image segmentation model for detecting salient objects.
 This model utilizes a double-nested U-structure to produce masks for images.
 These masks can be utilized to remove backgrounds from images.
 
-### System Requirements: 
+### System Requirements
 The following requirements need to be installed in order to utilize this model.
 `````
 Python
@@ -15,7 +15,7 @@ Python
 Torch2.3
 `````
 
-### Model Guide:
+### Model Guide
 Input jpg images into U2NET/test_data/test_images file.
 Run the following commands.
 `````
@@ -26,7 +26,7 @@ python applyMask_Removal.py
 The first command produces masks, which are saved in the U2NET/test_data/u2net_results file.
 The subsequent command applies the mask(s) onto the original image and saves the results in the U2NET/test_data/finalResults file.
 
-### Results:
+### Results
 The following are some of the results from the U2Net model.
 
 ![Alt text](U2Net/U2Net_Examples.png?raw=true "Background Removal")
@@ -36,7 +36,7 @@ The following are some of the results from the U2Net model.
 
 ## About Instruct-pix2pix
 
-### Set up a conda environment, and download a pretrained model:
+### Set up a conda environment, and download a pretrained model
 ```
 conda env create -f environment.yaml -p ../../conda-env/ip2p
 conda activate ../../conda-env/ip2p
